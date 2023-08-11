@@ -59,35 +59,50 @@
     position: absolute;
     left: 92px;
     top: -42px;
-    background: linear-gradient($SCISSORS_GRADIENT);
+
+    &_gradient {
+      background: linear-gradient($SCISSORS_GRADIENT);
+    }
   }
 
   &__paper {
     position: absolute;
     left: 251px;
     top: 51px;
-    background: linear-gradient($PAPER_GRADIENT);
+
+    &_gradient {
+      background: linear-gradient($PAPER_GRADIENT);
+    }
   }
 
   &__rock {
     position: absolute;
     left: 195px;
     top: 239px;
-    background: linear-gradient($ROCK_GRADIENT);
+
+    &_gradient {
+      background: linear-gradient($ROCK_GRADIENT);
+    }
   }
 
   &__lizard {
     position: absolute;
     top: 241px;
     left: 0;
-    background: linear-gradient($LIZARD_GRADIENT);
+
+    &_gradient {
+      background: linear-gradient($LIZARD_GRADIENT);
+    }
   }
 
   &__spock {
     position: absolute;
     top: 38px;
     left: -76px;
-    background: linear-gradient($CYAN);
+
+    &_gradient {
+      background: linear-gradient($CYAN);
+    }
   }
 }
 
