@@ -5,21 +5,21 @@ class GameView {
 
   #score;
 
-  static #baseField = `
+  #baseField = `
   <img src="./images/bg-pentagon.svg" alt="pentagon">
-  <div class="game__scissor chip" data-chip="scissor">
+  <div class="game__scissor game__scissor_gradient chip" data-chip="scissor">
     <div class="chip__circle"><img src="./images/icon-scissor.svg" alt="scissor"></div>
   </div>
-  <div class="game__paper chip" data-chip="paper">
+  <div class="game__paper game__paper_gradient chip" data-chip="paper">
     <div class="chip__circle"><img src="./images/icon-paper.svg" alt="paper"></div>
   </div>
-  <div class="game__rock chip" data-chip="rock">
+  <div class="game__rock game__rock_gradient chip" data-chip="rock">
     <div class="chip__circle"><img src="./images/icon-rock.svg" alt="rock"></div>
   </div>
-  <div class="game__lizard chip" data-chip="lizard">
+  <div class="game__lizard game__lizard_gradient chip" data-chip="lizard">
     <div class="chip__circle"><img src="./images/icon-lizard.svg" alt="lizard"></div>
   </div>
-  <div class="game__spock chip" data-chip="spock">
+  <div class="game__spock game__spock_gradient chip" data-chip="spock">
     <div class="chip__circle"><img src="./images/icon-spock.svg" alt="spock"></div>
   </div>`;
 
@@ -40,6 +40,11 @@ class GameView {
 
   changeScore(score) {
     this.#score.innerText = score;
+  }
+
+  showChipsField() {
+    this.#clearField();
+    this.#gameField.innerHTML = this.#baseField;
   }
 
   showGameResult(result, chip, enemyChip) {

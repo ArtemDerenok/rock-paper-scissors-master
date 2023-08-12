@@ -1,4 +1,5 @@
 import GameModel from '../model/gameModel';
+import GameView from '../view/gameView';
 
 class GameControler {
   static #instance = null;
@@ -24,6 +25,10 @@ class GameControler {
 
       if (chipType) {
         return new GameModel().getWinner(chipType);
+      }
+
+      if (event.target.id === 'playAgain') {
+        return new GameView().showChipsField();
       }
       return false;
     });
