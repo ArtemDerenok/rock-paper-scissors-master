@@ -1,4 +1,3 @@
-/* eslint-disable no-constructor-return */
 import getRandomNum from '../utils/getRandomNum';
 import GameView from '../view/gameView';
 
@@ -15,6 +14,8 @@ class GameModel {
     spock: ['scissor', 'rock'],
   };
 
+  #score = 0;
+
   constructor() {
     if (GameModel.#instance) {
       return GameModel.#instance;
@@ -27,18 +28,12 @@ class GameModel {
     const enemyChip = this.#chipArray[randomNum];
 
     if (chip === enemyChip) {
-      console.log('Ничья');
+      new GameView().showGameResult('draw', chip, enemyChip);
     } else if (this.#beatsMap[chip].includes(enemyChip)) {
-      console.log('Победа');
-      console.log(chip);
-      console.log(enemyChip);
+      new GameView().showGameResult('win', chip, enemyChip);
     } else {
-      console.log('Поражение');
-      console.log(chip);
-      console.log(enemyChip);
+      new GameView().showGameResult('lose', chip, enemyChip);
     }
-
-    new GameView().showGameResult();
   }
 }
 

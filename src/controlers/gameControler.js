@@ -1,6 +1,5 @@
 import GameModel from '../model/gameModel';
 
-/* eslint-disable no-constructor-return */
 class GameControler {
   static #instance = null;
 
@@ -19,12 +18,12 @@ class GameControler {
     this.#gameField.addEventListener('click', (event) => {
       let chipType = event.target.dataset.chip;
       if (chipType) {
-        new GameModel().getWinner(chipType);
+        return new GameModel().getWinner(chipType);
       }
       chipType = event.target.offsetParent.dataset.chip;
 
       if (chipType) {
-        new GameModel().getWinner(chipType);
+        return new GameModel().getWinner(chipType);
       }
       return false;
     });

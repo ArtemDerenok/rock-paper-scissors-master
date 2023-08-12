@@ -1,4 +1,3 @@
-/* eslint-disable no-constructor-return */
 class GameView {
   static #instance = null;
 
@@ -7,7 +6,7 @@ class GameView {
   static #baseField = `
   <img src="./images/bg-pentagon.svg" alt="pentagon">
   <div class="game__scissor chip" data-chip="scissor">
-    <div class="chip__circle"><img src="./images/icon-scissors.svg" alt="scissors"></div>
+    <div class="chip__circle"><img src="./images/icon-scissor.svg" alt="scissor"></div>
   </div>
   <div class="game__paper chip" data-chip="paper">
     <div class="chip__circle"><img src="./images/icon-paper.svg" alt="paper"></div>
@@ -36,15 +35,29 @@ class GameView {
     this.#gameField.innerHTML = '';
   }
 
-  showGameResult() {
+  showGameResult(result, chip, enemyChip) {
     this.#clearField();
 
     this.#gameField.innerHTML = `
-  <div class="game__spock_gradient chip" data-chip="spock">
-    <div class="chip__circle"><img src="./images/icon-spock.svg" alt="spock"></div>
-  </div>
-  <div class="game__spock_gradient chip" data-chip="spock">
-    <div class="chip__circle"><img src="./images/icon-spock.svg" alt="spock"></div>
+  <div class="game__finishBox">  
+    <div class="game__chip">
+    <h4>YOU PICKED</h4>
+    <div class="game__${chip}_gradient chip" data-chip="${chip}">
+      <div class="chip__circle"><img src="./images/icon-${chip}.svg" alt="${chip}"></div>
+    </div>
+    </div>
+    <div class="game__resultBox">
+      <h2 class="game__resultTitle">${
+        result === 'win' ? 'YOU WIN' : result === 'lose' ? 'YOU LOSE' : 'DRAW'
+      }</h2>
+      <button class="game__playBtn" id="playAgain">PLAY AGAIN</button> 
+    </div>
+    <div class="game__enemyChip">
+    <h4>THE HOUSE PICKED</h4>
+    <div class="game__${enemyChip}_gradient chip" data-chip="${enemyChip}">
+      <div class="chip__circle"><img src="./images/icon-${enemyChip}.svg" alt="${enemyChip}"></div>
+    </div>
+    </div>
   </div>`;
   }
 }

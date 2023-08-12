@@ -10,5 +10,8 @@
     "sourceType": "module"
   },
   "plugins": ["prettier"],
-  "rules": {}
+  "rules": {
+    "no-nested-ternary": "off",
+    "no-constructor-return": "off"
+  }
 }

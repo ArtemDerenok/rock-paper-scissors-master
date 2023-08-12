@@ -55,6 +55,57 @@
 .game {
   position: relative;
 
+  &__finishBox {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    h4 {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  &__enemyChip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    h4 {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  &__resultBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__resultTitle {
+    color: white;
+    font-size: 35px;
+  }
+
+  &__playBtn {
+    all: unset;
+    cursor: pointer;
+    color: $DARK_TEXT;
+    background-color: white;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+  }
+
   &__scissor {
     position: absolute;
     left: 92px;
