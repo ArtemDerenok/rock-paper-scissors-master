@@ -23,6 +23,11 @@ class GameModel {
     GameModel.#instance = this;
   }
 
+  #changeScore(newScore) {
+    this.#score += newScore;
+    new GameView().changeScore(this.#score);
+  }
+
   getWinner(chip) {
     const randomNum = getRandomNum(0, this.#chipArray.length - 1);
     const enemyChip = this.#chipArray[randomNum];
@@ -31,8 +36,10 @@ class GameModel {
       new GameView().showGameResult('draw', chip, enemyChip);
     } else if (this.#beatsMap[chip].includes(enemyChip)) {
       new GameView().showGameResult('win', chip, enemyChip);
+      this.#changeScore(1);
     } else {
       new GameView().showGameResult('lose', chip, enemyChip);
+      this.#changeScore(-1);
     }
   }
 }

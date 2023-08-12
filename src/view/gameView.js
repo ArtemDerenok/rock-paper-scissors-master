@@ -3,6 +3,8 @@ class GameView {
 
   #gameField;
 
+  #score;
+
   static #baseField = `
   <img src="./images/bg-pentagon.svg" alt="pentagon">
   <div class="game__scissor chip" data-chip="scissor">
@@ -27,12 +29,17 @@ class GameView {
     }
 
     this.#gameField = document.getElementById('gameField');
+    this.#score = document.getElementById('score');
 
     GameView.#instance = this;
   }
 
   #clearField() {
     this.#gameField.innerHTML = '';
+  }
+
+  changeScore(score) {
+    this.#score.innerText = score;
   }
 
   showGameResult(result, chip, enemyChip) {
