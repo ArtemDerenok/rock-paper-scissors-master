@@ -12,6 +12,7 @@
   "plugins": ["prettier"],
   "rules": {
     "no-nested-ternary": "off",
-    "no-constructor-return": "off"
+    "no-constructor-return": "off",
+    "no-new": "off"
   }
 }

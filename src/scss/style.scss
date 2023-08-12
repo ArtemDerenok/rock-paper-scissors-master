@@ -196,3 +196,51 @@
     letter-spacing: 2px;
   }
 }
+
+.background {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient($RADIAL_GRADIENT);
+  opacity: 50%;
+}
+
+.modal {
+  &__boxOne {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__rules {
+    background-color: white;
+    padding: 30px 40px 30px 40px;
+    border-radius: 5px;
+    top: 30%;
+    left: 38%;
+    position: fixed;
+    z-index: 100;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__title {
+    color: $SCORE_TEXT;
+    font-family: $MAIN_FONT;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
