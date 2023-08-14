@@ -12,14 +12,14 @@
 <body>
   <main class="container">
     <section class="score">
-      <img src="./images/logo-bonus.svg" alt="Rock, paper, scissors, lizard, spock">
+      <img src="./images/logo-bonus.svg" class="score__img" alt="Rock, paper, scissors, lizard, spock">
       <div class="score__total">
         <h3 class="score__title">SCORE</h3>
         <p class="score__text" id="score">0</p>
       </div>
     </section>
     <section class="game" id="gameField">
-      <img src="./images/bg-pentagon.svg" alt="pentagon">
+      <img class="game__img" src="./images/bg-pentagon.svg" alt="pentagon">
       <div class="game__scissor game__scissor_gradient chip" data-chip="scissor">
         <div class="chip__circle"><img src="./images/icon-scissor.svg" alt="scissor"></div>
       </div>
@@ -41,12 +41,13 @@
     </section>
   </main>
   <div id="background" class="background hide"></div>
-  <div id="rulesModal" class="modal__rules hide">
+  <div id="rulesModal" class="modal hide">
     <div class="modal__boxOne">
       <h3 class="modal__title">RULES</h3>
-      <img id="cross" src="./images/cross.svg" alt="cross">
+      <img class="modal__crossOne" id="cross" src="./images/cross.svg" alt="cross">
     </div>
-    <img src="./images/image-rules-bonus.svg" alt="rules">
+    <img class="modal__img" src="./images/image-rules-bonus.svg" alt="rules">
+    <img class="modal__crossTwo" id="crossTwo" src="./images/cross.svg" alt="cross">
   </div>
 </body>
 

@@ -6,7 +6,7 @@ class GameView {
   #score;
 
   #baseField = `
-  <img src="./images/bg-pentagon.svg" alt="pentagon">
+  <img class="game__img" src="./images/bg-pentagon.svg" alt="pentagon">
   <div class="game__scissor game__scissor_gradient chip" data-chip="scissor">
     <div class="chip__circle"><img src="./images/icon-scissor.svg" alt="scissor"></div>
   </div>

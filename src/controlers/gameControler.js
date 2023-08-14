@@ -45,6 +45,13 @@ class GameControler {
       this.#modalBackground.classList.toggle('hide');
       this.#modal.classList.toggle('hide');
     });
+
+    this.#modal.addEventListener('click', (event) => {
+      if (event.target.id === 'crossTwo') {
+        this.#modalBackground.classList.toggle('hide');
+        this.#modal.classList.toggle('hide');
+      }
+    });
   }
 
   #chipControl() {

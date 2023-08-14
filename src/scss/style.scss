@@ -66,6 +66,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    width: 155px;
 
     h4 {
       color: white;
@@ -78,6 +79,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    width: 155px;
 
     h4 {
       color: white;
@@ -209,6 +211,17 @@
 }
 
 .modal {
+  background-color: white;
+  padding: 30px 40px 30px 40px;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 100;
+  font-size: 30px;
+  font-weight: 700;
+
   &__boxOne {
     display: flex;
     align-items: center;
@@ -219,28 +232,144 @@
     }
   }
 
-  &__rules {
-    background-color: white;
-    padding: 30px 40px 30px 40px;
-    border-radius: 5px;
-    top: 30%;
-    left: 38%;
-    position: fixed;
-    z-index: 100;
-    font-size: 30px;
-    font-weight: 700;
-  }
-
   &__title {
     color: $SCORE_TEXT;
     font-family: $MAIN_FONT;
   }
+
+  &__crossTwo {
+    display: none;
+  }
 }
 
 .show {
-  display: block;
+  display: block !important;
 }
 
 .hide {
-  display: none;
+  display: none !important;
+}
+
+@media (max-width: 739px) {
+  .rules {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .score {
+    &__img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .game {
+    &__img {
+      width: 250px;
+      height: 250px;
+    }
+
+    &__spock {
+      top: 61px;
+      left: -32px;
+    }
+
+    &__scissor {
+      left: 83px;
+      top: -30px;
+    }
+
+    &__lizard {
+      top: 204px;
+    }
+
+    &__paper {
+      left: 190px;
+      top: 63px;
+    }
+
+    &__rock {
+      left: 172px;
+      top: 204px;
+    }
+  }
+
+  .chip {
+    width: 90px;
+    height: 90px;
+
+    &__circle {
+      width: 60px;
+      height: 60px;
+
+      img {
+        width: 30px;
+        height: 35px;
+      }
+    }
+  }
+}
+
+@media (max-width: 655px) {
+  .score {
+    gap: 100px;
+
+    &__text {
+      font-size: 40px;
+    }
+  }
+
+  .game {
+    &__finishBox {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__chip {
+      width: 100px;
+
+      h4 {
+        font-size: 12px;
+        order: 1;
+      }
+    }
+
+    &__enemyChip {
+      width: 100px;
+
+      h4 {
+        font-size: 12px;
+        order: 1;
+      }
+    }
+
+    &__resultBox {
+      order: 3;
+    }
+  }
+
+  .modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__boxOne {
+    }
+
+    &__img {
+      width: 250px;
+      height: 250px;
+    }
+
+    &__crossOne {
+      display: none;
+    }
+
+    &__crossTwo {
+      display: block;
+    }
+  }
 }
